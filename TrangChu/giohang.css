@@ -1,0 +1,29 @@
+
+main{
+    background-color: rgb(253, 250, 247);
+    border-radius: 0;
+}
+.gioHangtrong img{
+    margin-left: 470px;
+
+}
+
+.gioHangtrong {
+    padding: 10px;
+}
+.gioHangtrong a{
+    text-decoration: none;
+}
+.gioHangtrong h3{
+    margin-left: 670px;
+    padding: 10px;
+    background-color: rgb(187, 216, 131);
+    width: fit-content;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.gioHangtrong h3:hover{
+    background-color: brown;
+    transition: 0.3s;
+    cursor: pointer;
+}

@@ -1,0 +1,232 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+/*header*/
+header {
+    background-color: #3968eb;
+    color: white;
+    padding: 5px;
+    text-align: left;
+    display: flex;
+}
+
+header img{
+    display: inline;
+    max-width: 5%;
+    margin-left:70px;   
+}
+
+
+nav {
+    background-color: #eaf0f5;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.nav-header a {
+    padding: 5px;
+    padding-left: 50px;
+    text-decoration: none; /* Xóa dấu gạch chân của các liên kết trong thanh điều hướng */
+    align-items: center;
+
+}
+.nav-header a:hover{
+    color: #3968eb;
+    
+}
+main {
+    background-color: white;
+    padding: 0px;
+}
+
+
+header .promo-text {
+    font-size: 1.5em;
+    color: #ffffff; /* Màu cam */
+    margin-left: 60px;
+}
+
+/* Chèn quy tắc mới để đổi màu cho phần "MỖI NGÀY" */
+.promo-text-highlight {
+    color: yellow; /* Màu vàng */
+}
+.promo-text-highlight2 {
+    color: rgb(221, 23, 79); /* Màu vàng */
+}
+/* thẻ nav*/
+.search{
+    background-color: #ccc;
+    display: flex;
+    padding: 5px;
+}
+  
+.imgvoucher{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cart-icon img {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 80px;
+    height: 80px;
+}
+
+.cart-notification {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    z-index: 1;
+}
+
+/* Thiết lập kiểu cho thanh tìm kiếm */
+
+.search-bar {
+    width: 500px;
+    height: 100px;
+    padding-left: 45px;
+    display: flex; /* Sắp xếp các phần tử trong một hàng ngang */
+    align-items: center; /* Canh giữa các phần tử theo chiều dọc */
+}
+
+/* Thiết lập kiểu cho ô nhập liệu tìm kiếm */
+#searchInput {
+    padding: 10px;
+    width: 600px;
+    height: 32px;
+    border: 1px solid #ccc; /* Viền của ô tìm kiếm */
+    border-radius: 2px; /* Bo tròn góc của ô tìm kiếm */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Thiết lập kiểu cho nút tìm kiếm */
+.search-bar button {    
+    height: 51.9px;
+    width: 70px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #3968eb; /* Màu nền của nút tìm kiếm */
+    border: none; /* Không có viền */
+    border-radius: 2px; /* Bo tròn góc của nút tìm kiếm */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    align-items: center;
+}
+
+/* Thiết lập kiểu cho biểu tượng tìm kiếm */
+.search-bar button img {
+    width: 40px;
+    height: 40px;
+}
+.search .lazadalogo{
+    margin-top: -2px;
+}
+
+/* item 
+*/
+.item-section{
+    margin-right: 50px;
+    border-radius: 1px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+.item-section .section03{
+    width: 130px;
+    margin-left: 5px;
+    margin-top: 22px;
+    height: 341px;
+}
+.item-section .section03 img{
+    max-width: 130px;
+    max-height: 100%;
+
+}
+.item-section .section03 img:hover {
+    transition: 0.3s;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.item-section ul {
+  
+    background-color: #ffffff;
+    max-width: 100%;
+    list-style-type: none;
+    margin-bottom: 20px;
+
+}
+.item-section ul li a{
+    list-style-type: none;
+    display: block;
+    max-width: 500px;
+    padding: 5.5px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 0 5px;
+    background-color: #7293ed;
+}
+
+.item-section ul li a:hover{
+    color: #ffffff;
+
+}
+.item-section {
+    display: flex;
+    align-items: flex-start; /* Đảm bảo các phần tử con bắt đầu từ cùng một dòng */
+}
+.item-section a:hover{
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s;
+}
+.item-section .banner-slide{
+    margin-top: 15.8px;
+
+}
+.item-section .banner-slide img {
+    width: 1000px;
+    max-height: 560px;
+}
+
+
+.container {
+    width: 1200px;
+    height: 100px;
+    padding-left: 50px;
+    background-color: white;
+    margin-top: 10px;
+    margin-left: 100px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 50px;
+    padding-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.Deal-chop-nhoang1 .danhchoban{
+    margin-left: 100px;
+}

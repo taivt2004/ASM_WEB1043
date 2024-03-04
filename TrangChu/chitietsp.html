@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phấm</title>
+    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet" href="chitietsp.css">
+    <link rel="stylesheet" href="footerSanPham.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="cart.js"></script>
+    <style>
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            border: 0.5px solid black;
+            box-shadow: inset 0 0 5px black;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .selected {
+            border: 1px solid red;
+            /* Hoặc màu sắc bạn muốn sử dụng cho viền khi đã chọn */
+        }
+
+        .mausac {
+            display: flex;
+        }
+        p img:hover{
+            border: 1px solid red;
+        }
+        p img{
+            border: 1px solid rgb(169, 166, 166);
+            border-radius: 50px;
+        }
+        .spiphone{
+            width: fit-content;
+            height: fit-content;
+        }
+        .imgiphone{
+            background-color: rgb(255, 255, 255);
+            margin-right: 20px;
+            border-radius: 3px;
+            border: 1px solid black;
+            box-shadow: 0 0 2px;
+            width: 561px;
+            height: 560px;
+        }
+        .price{
+            color: rgb(8, 8, 8);
+            font-size: 25px;
+            font-weight: bold;
+            width: fit-content;
+        }
+        .bs_time{
+            float: right;
+            margin-top: -60px;
+        }
+        .a{
+            margin-top: 2px;
+        }
+        .colormausac{
+         color: #f39c12;
+         font-size: 17px;
+         font-weight: bold;   
+        }
+        .soluong{
+            float: right;
+            margin-top: -30px;
+            margin-right: 200px;
+        }
+        .soluong #quantity{
+            background-color: #f39c12;
+            border-radius: 10px;
+        }
+        .soluong #quantiny min{
+            background-color: aqua;
+        }
+        #error-message{
+            font-size: 10px;
+            float: right;
+            margin-top: -25px;
+            margin-right: 250px;
+        }
+        #error-message1{
+            font-size: 10px;
+            float: right;
+            margin-top: 8px;
+            margin-right: 260px;
+        }
+        .soluong label{
+            color: #f39c12;
+            font-size: 17px;
+            font-weight: bold;   
+        }
+  
+    </style>
+</head>
+
+<body>  
+    <header>
+        <p class="promo-text">ƯU ĐÃI HOT <span class="promo-text-highlight">MỖI NGÀY</span></p>
+        <img src="saleofff.png" alt="">
+        <img src="ship.png" alt="">
+        <img src="coupon.png" alt="">
+        <p class="promo-text"><span class="promo-text-highlight2">DEAL XỊN</span> CHO BẠN LẦN ĐẦU SỬ DỤNG</p>
+    </header>
+
+    <nav class="nav-header">
+        <a href="trangchu.html">TRANG CHỦ</a>
+        <a href="SanPham.html">SẢN PHẨM</a>
+        <a href="giohang.html">GIỎ HÀNG</a>
+        <a href="dangnhap.html">ĐĂNG NHẬP</a>
+        <a href="dangki.html">ĐĂNG KÍ</a>
+    </nav>
+
+    <main>
+        <h2>Chi tiết Sản phẩm</h2>
+        <div class="chitietsp">
+
+
+          <div class="spiphone">
+            <div class="imgiphone">
+            <img class="product-image" src="imgSanPham/iphone12p1.webp" width="560"   margin-bottom="5" alt="Product Image">
+        </div>
+            <p>
+                <img src="imgSanPham/iphone12p1.webp" width="89" alt="">
+                <img src="imgSanPham/iphone12p2.webp" width="89" alt="">
+                <img src="imgSanPham/iphone12p3.webp" width="89"  alt="">
+                <img src="imgSanPham/iphone12p4.webp" width="89"  alt="">
+                <img src="imgSanPham/iphone12p6.webp" width="89"  alt="">
+                <img src="imgSanPham/iphone12p5.webp" width="89"  alt="">
+               
+            </p>
+        </div>
+            
+            <div class="product-info">
+                <h3>Tên Sản phẩm</h3>
+                <p class="nameprod">Apple iPhone 15 Pro Max Chính hãng  <br></p>
+                <div class="product-description">
+                    <h4 id="dungluong">Dung lượng: </h4> <div id="error-message" style="color: red;"></div>
+                    <button class="dungluong1" data-price="20000000" onclick="selectDungluong(this)">32GB</button>
+                    <button class="dungluong1" data-price="25000000" onclick="selectDungluong(this)">64GB</button>
+                    <button class="dungluong1" data-price="30000000" onclick="selectDungluong(this)">128GB</button>
+                    <button class="dungluong1" data-price="35000000" onclick="selectDungluong(this)">256GB</button>
+                <div class="a">
+                <label class="colormausac" for="color">Màu sắc:  </label> <div id="error-message1" style="color: rgb(255, 0, 0);"></div>
+                <div class="mausac">
+                    <div class="color-option" data-color="gray" style="background-color: gray" onclick="selectColor(this)">
+                    </div>
+                    <div class="color-option" data-color="white" style="background-color: white" onclick="selectColor(this)">
+                    </div>
+                    <div class="color-option" data-color="black" style="background-color: black" onclick="selectColor(this)"></div>                    
+                </div>
+                <div class="soluong">
+                    <label for="quantity" >Số lượng:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1"> 
+                </div>
+            </div>
+            
+                <script>
+                    function selectColor(element) {
+                        // Xóa lớp 'selected' từ tất cả các ô màu
+                        var allColorOptions = document.querySelectorAll('.color-option');
+                        
+                        allColorOptions.forEach(function (item) {
+                            item.classList.remove('selected');
+                        });
+
+                        // Thêm lớp 'selected' vào ô màu được nhấp
+                        element.classList.add('selected');
+                    }
+                    function selectDungluong(element){
+                        var allDungluong = document.querySelectorAll('.dungluong1');
+
+                        allDungluong.forEach(function (item){
+                            item.classList.remove('selected')
+                        });
+
+                        element.classList.add('selected');
+
+                        var selectedPrice = element.dataset.price;
+                        var formattedPrice = formatCurrency(selectedPrice);
+                         document.querySelector('.price').innerText = "Giá: " + formattedPrice;
+
+                         function formatCurrency(price) {
+                         // Hàm định dạng giá tiền theo định dạng số
+                                return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+                                                            }                           
+                    }
+                </script>
+                
+                <div class="reviews-section">
+                    <p class="price" data-price="35090001">Giá: ....  ₫</p>
+                    <div class="bs_time">
+                        <span>Kết thúc sau</span>
+                        <div id="clock_oltk" class="clockv2" data-time="2024/01/27 23:59:00" data-reload="1"><b>03</b><i>:</i><b>14</b><i>:</i><b>09</b></div>
+                        
+                        
+                </div>
+                <div class="uudai2">
+                    <ul>
+                        <li><a href="">👉 Nhập mã MMTGDD123 giảm ngay 1% tối đa 100.000đ khi thanh toán qua MOMO (Xem chi tiết tại đây).</a></li>
+                        <li><a href="">👉 Nhập mã VNPAYTGDD giảm từ 50,000đ đến 200,000đ (Áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR (Xem chi tiết tại đây)</a></li>
+                    </ul>
+                </div>
+                    <div class="uudai">
+                    <h5> <img src="imgSanPham/logo1.png" width="30px" alt=""  >  +13.990 điểm tích lũy Quà Tặng VIP</h5>
+                </div>
+                    
+                <div class="action-buttons">
+                    <button id="addToCartButton" onclick="addToCart(this)">Thêm vào Giỏ hàng</button>
+                    <button>Mua Ngay</button>
+                </div>
+                </div>
+
+
+                
+                
+                </div>
+                <script src="http://code.jquery.com/jquery-3.5.0.min.js"></script>
+                    <script>
+                        $(() =>{
+                            $('p img').mouseover(function(){
+                                let imgPath = $(this).attr('src');
+                                $('.product-image').attr('src', imgPath);
+                            })
+                        })
+                    </script>
+            </div>
+        </div>
+        <div class="danhgiasp">
+            <div class="rate">
+                <div class="luotdanhgia">
+                    <p>4.7/5</p>
+                    <img src="star.png" alt="">
+                    <img src="star.png" alt="">
+                    <img src="star.png" alt="">
+                    <img src="star.png" alt="">
+                    <img src="star.png" alt="">
+                    <h5>275 đánh giá</h5>
+                </div>
+
+
+                <div class="supplier-info">
+                    <h2>Thông Tin Nhà Cung Cấp</h2>
+                    <div class="supplier-logo">
+                        <img src="iphone.png" alt="Supplier Logo">
+                    </div>
+                    <div class="supplier-stats">
+                        <div class="stat-item">
+                            <p>258</p>
+                            <span>Sản phẩm</span>
+                        </div>
+                        <div class="stat-item">
+                            <p>2 ngày</p>
+                            <span>Chuẩn bị hàng</span>
+                        </div>
+                        <div class="stat-item">
+                            <p>51%</p>
+                            <span>Tỉ lệ phản hồi</span>
+                        </div>
+                        <div class="stat-item">
+                            <p>Trong tuần</p>
+                            <span>Shop phản hồi</span>
+                        </div>
+                    </div>
+                    <p>Được cung cấp bởi: <span class="supplier-name">Tên Nhà Cung Cấp</span></p>
+                    <p>Đánh giá nhà cung cấp: ⭐⭐⭐⭐⭐</p>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+
+        <h4>Nhận xét của khách Hàng</h4>
+
+        <div class="comment-section">
+            <h3>Đánh giá và bình luận</h3>
+            <form id="comment-form">
+                <input type="text" id="username" placeholder="Nhập tên của bạn" required>
+                <textarea id="comment" placeholder="Nhập đánh giá và bình luận của bạn" required></textarea>
+                <button type="submit">Gửi</button>
+            </form>
+            <div class="comments">
+                <div class="comment-item">
+                    <div class="post-author">
+                        <img src=".png" alt="" class="author-img">
+                        <div class="infor-author">
+                            <p class="">Phil Poden</p>
+                            <p class="comment-content">Sản phẩm rất tốt</p>
+                            <div class="icon1"> <a href=""><i class="fa-solid fa-star">
+
+                                    </i></a>
+                                <a href="">
+                                    <i class="fa-solid fa-star"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa-solid fa-star"></i></a>
+                                <a href=""><i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a>
+                            </div>
+                        </div> <span class="post-time">4-Oct</span>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="post-author"> <img src="imgFeeback/anh7.png" alt="" class="author-img">
+                        <div class="infor-author">
+                            <p class="">Harry Wilson</p>
+                            <p class="comment-content">Sản phẩm rất tốt</p>
+                            <div class="icon1">
+                                <a href=""><i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a> <a href=""><i class="fa-solid fa-star">
+
+                                    </i></a> <a href=""><i class="fa-solid fa-star"></i></a>
+                            </div>
+                        </div> <span class="post-time">15-Sep</span>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="post-author">
+                        <img src="imgFeeback/anh8.png" alt="" class="author-img">
+                        <div class="infor-author">
+                            <p class="">Phil Poden</p>
+                            <p class="comment-content">Sản phẩm rất tốt</p>
+                            <div class="icon1">
+                                <a href=""><i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a> <a href="">
+                                    <i class="fa-solid fa-star"></i></a>
+                            </div>
+                        </div> <span class="post-time">4-Oct</span>
+                    </div>
+                </div>
+                <div class="comment-item">
+                    <div class="post-author"> <img src="imgFeeback/anh8.png" alt="" class="author-img">
+                        <div class="infor-author">
+                            <p class="">Harry Wilson</p>
+                            <p class="comment-content">Sản phẩm rất tốt</p>
+                            <div class="icon1"> <a href=""><i class="fa-solid fa-star"></i></a> <a href=""><i
+                                        class="fa-solid fa-star"></i></a> <a href=""><i
+                                        class="fa-solid fa-star"></i></a> <a href=""><i
+                                        class="fa-solid fa-star"></i></a> <a href=""><i
+                                        class="fa-solid fa-star"></i></a> </div>
+                        </div> <span class="post-time">15-Sep</span>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <div class="footer">
+        <div class="imgfooter">
+            <img src="anhfooter1.webp" alt="">
+            <img src="anhfooter2.webp" alt="">
+            <img src="anhfooter3.webp" alt="">
+        </div>
+        <div class="lzd-footer-inner" data-spm="footer_top">
+            <div class="lzd-footer-width-25">
+                <h3 class="footer-title">LIÊN HỆ VỚI LAZADA</h3>
+                <ul class="footer-list">
+
+                    <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Hotline &amp; Chat trực tuyến
+                            (24/7)</a></li>
+
+                    <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Trung tâm hỗ trợ</a></li>
+
+                    <li class="footer-li"><a href="//www.lazada.vn/helpcenter/payments/">Hướng dẫn đặt hàng</a></li>
+
+                    <li class="footer-li"><a href="//www.lazada.vn/helpcenter/shipping-and-delivery/">Giao hàng &amp;
+                            Nhận hàng</a></li>
+
+                    <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/products-on-lazada/">Chính sách hàng
+                            nhập khẩu</a></li>
+
+                    <li class="footer-li"><a
+                            href="//www.lazada.vn/helpcenter/returns/?spm=a2o4n.helpcenter.0.0.8e226171cswmxE">Hướng dẫn
+                            đổi trả hàng</a></li>
+
+
+                </ul>
+            </div>
+            <div class="lzd-footer-width-25">
+                <h3 class="footer-title">LAZADA VIỆT NAM</h3>
+                <ul class="footer-list">
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.vn/directory/categories">Tất cả danh mục</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//group.lazada.com/en/about/">Về Lazada Việt Nam</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://pages.lazada.vn/wow/i/vn/sell-on-lazada/register_now/">Bán hàng cùng Lazada</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://www.lazada.vn/affiliate/">Chương trình Lazada Afﬁliate</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="//www.lazada.com/work-at-lazada/">Tuyển dụng</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a
+                            href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/terms-of-use">Điều
+                            khoản sử dụng</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a
+                            href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/privacy">Chính
+                            sách bảo mật</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://www.lazada.vn/press/">Báo chí</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/IPR">Bảo vệ quyền sở hữu trí tuệ</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/quy-che-ban-hang">Quy chế hoạt động sàn
+                            Lazada</a>
+
+                    </li>
+
+                    <li class="footer-li">
+
+                        <a
+                            href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;wh_pid=/lazada/channel/vn/khuyen-mai/quy-trinh-giai-quyet-tranh-chap-khieu-nai">Quy
+                            trình giải quyết tranh chấp, khiếu nại</a>
+
+                    </li>
+
+                </ul>
+            </div>
+            <div class="lzd-footer-width-50">
+
+
+                <div class="lzdfooterappdownloads">
+                    <div class="pull-left">
+                        <div class="title">Go where your heart beats</div>
+                        <div class="text">Tải App Lazada</div>
+                        <div class="ggappstore">
+                            <img src="appstore+ggplay.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lzd-footer-app-supplement">
+
+                    <div>CÔNG TY TNHH RECESS</div>
+
+                    <div>Giấy CNĐKDN: 0308808576 – Ngày cấp: 06/5/2009, được sửa đổi lần thứ 19 ngày 15/8/2019. </div>
+
+                    <div>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.HCM </div>
+
+                    <div>Địa chỉ đăng ký kinh doanh: Tầng 19, Tòa nhà Saigon Centre – Tháp 2, 67 Lê Lợi, Phường Bến
+                        Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam.</div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>

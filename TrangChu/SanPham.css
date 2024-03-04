@@ -1,0 +1,283 @@
+*{
+    padding: 0;
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #3968eb;
+    color: white;
+    padding: 5px;
+    text-align: left;   
+    display: flex;
+}
+header img{
+    display: inline;
+    max-width: 5%;
+    margin-left:70px;   
+}
+.promo-text {
+    font-size: 1.5em;
+    color: #f5f5f5; /* Màu cam */
+    margin-left: 100px;
+}
+
+/* Chèn quy tắc mới để đổi màu cho phần "MỖI NGÀY" */
+.promo-text-highlight {
+    color: yellow; /* Màu vàng */
+}
+.promo-text-highlight2 {
+    color: rgb(105, 41, 224); /* Màu vàng */
+}
+
+nav {
+    background-color: #eaf0f5;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
+.nav-header a {
+    padding: 5px;
+    padding-left: 50px;
+    text-decoration: none; /* Xóa dấu gạch chân của các liên kết trong thanh điều hướng */
+    align-items: center;
+}
+.nav-header a:hover{
+    color: #3968eb;
+}
+/* css cho danh mục sản phẩm */
+img {
+    max-height: 150px;
+}
+main{
+    padding: 50px;
+}
+
+.Deal-chop-nhoang1 {
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    padding: 5px;
+}
+.Deal-chop-nhoang1 .hh{
+    width: fit-content;
+    height: 60px;
+    padding: 10px;
+    color: #3968eb;
+    float: right;
+}
+.Deal-chop-nhoang1 .hh p{
+    padding: 10px;
+    background-color: #ffffff;   
+    width: fit-content;
+    border: 1px solid #3968eb;
+    float: right;    
+    margin-right: 10px;
+}
+.Deal-chop-nhoang1 .hh p:hover{
+    background-color: #3968eb;
+    color: #eaf0f5;
+    cursor: pointer;
+}
+.Deal-chop-nhoang1 .text-dang-ban{
+    width: fit-content;
+    height: fit-content;
+    color: #f86503;
+    padding: 20px;
+    font-size: 20px;
+}
+.Deal-chop-nhoang .gachngang{
+    width: 100%;
+}
+main h2{
+    color: #3968eb;
+}
+.Deal-chop-nhoang{
+    justify-content: center;
+    width: 100%;
+    height: 350px;
+    padding: 5px;
+    display: flex;
+    background-color: white;
+}
+
+.Deal-chop-nhoang .product{
+    height: 300px;
+    padding: 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: inset 0 0 5px;
+}
+.Deal-chop-nhoang .product:hover {
+    box-shadow:  0 0 5px rgba(0, 0, 0, 0.3); /* Đổ bóng khi di chuột vào */
+    
+}
+.Deal-chop-nhoang .product img{
+    justify-content: center;
+}
+.Deal-chop-nhoang .product img:hover{
+    transition: background-color 0.3s;
+    cursor: pointer;
+    
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+.Deal-chop-nhoang .product .product-info h5{
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.Deal-chop-nhoang .product .product-info .product-price{
+    color: #3968eb;
+}
+.Deal-chop-nhoang .product .product-info .mua-ngay{
+    color: #3968eb;
+    background-color: white;
+    border: 1px solid #3968eb;
+    padding: 5px;
+    width: fit-content;
+    margin-left: 50px;
+}
+.Deal-chop-nhoang .product .product-info .mua-ngay:hover{
+    background-color: #3968eb;
+    color: white;
+    cursor: pointer;
+    transition:  0.3s;
+}
+
+.lazmall{
+    height: 120px;
+    padding: 50px;
+}
+.lazmall h2{
+    color: #3968eb;
+}
+.container1 {
+    position: relative; /* Đặt position relative cho phần chứa */
+}
+
+.overlay-image {
+    position: absolute; /* Đặt position absolute cho tấm hình đè lên */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Đặt tầng lớp cao hơn so với tấm hình dưới */
+    width: 35%;
+    margin-left: 50px;
+    margin-top: 125px;
+    box-shadow: 0 0 5px;
+}
+.lazmallshop .product1 p{
+    margin-top: 50px;
+    
+}
+.lazmallshop .product1{
+    height: 250px;
+    padding: 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 30px;
+    box-shadow: 0 0 2px ;
+}
+.lazmallshop .product1 .container1 img{
+    margin-right: 15px;
+}
+.lazmallshop .product1:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3); /* Đổ bóng khi di chuột vào */
+    
+}
+.lazmallshop {
+    justify-content: center;
+    width: 100%;
+    height: 280px;
+    padding: 5px;
+    display: flex;
+    background-color: white;
+}
+.danhmuc{
+    margin-top: 250px;
+    height: 100px;
+    padding: 50px;
+    margin-bottom: 200px;
+}
+.danhmuc h2{
+    color: #3968eb;
+}
+.danhmuchang{
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    padding: 0px;
+    display: flex;
+    background-color: white;
+}
+
+.danhmuchang .container1{
+     padding: 10px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 30px;
+    box-shadow: inset 0 0 5px;
+}
+.danhmuchang .container1:hover{
+    box-shadow: inset 0 0 5px ;
+    cursor: pointer;
+
+   
+}
+.danhmuchang .container1 p{
+    font-size: 12px;
+}
+.product1{
+    margin-bottom: 20px;
+}
+.danhmuchang .container1 img{
+    width: 50%;
+    margin-right: 15px;
+}
+.danhmuchang .container1 img:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+.bannerSP img{
+    width: 100%;
+    max-height: 500px;
+    margin-left: 5px;
+    box-shadow: 0 0 7px;
+}
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    max-height: 700px; /* Điều chỉnh chiều cao của slide */
+}
+.slider-container .slide img{
+    width: 100%;
+    max-height: 600px;
+    
+}
+
+
+
+
+
+

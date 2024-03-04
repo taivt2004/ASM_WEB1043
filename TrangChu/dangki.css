@@ -1,0 +1,163 @@
+
+main{
+    width: 800px;
+    height: 450px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 340px;
+    border-radius: 2px;
+    box-shadow: 0 0 2px;
+}
+.phonenumber{
+    height: 394px;
+    width: 148px;
+}
+#gender{
+    margin-top: 10px;
+}
+.phonenumber .info{
+   margin-top: 10px;
+}
+.phonenumber label{
+    margin-top: 10px;
+} 
+.phonenumber .info input{
+    margin-top: 5px;
+}
+label{
+    margin-top: 15px;
+}
+#searchInput1 {
+    
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc; /* Viền của ô tìm kiếm */
+    border-radius:10px;    /* Bo tròn góc của ô tìm kiếm */
+    
+}
+#btnDangKi{
+    padding: 10px 20px;
+    background-color: white; /* Màu của Facebook */
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+    width: 100%;
+    margin-top: 10px;
+    height: 50px;
+}
+#btnDangKi:hover{
+    background-color: #3968eb;
+}
+#searchInput2 {
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc; /* Viền của ô tìm kiếm */
+    border-radius:10px;
+}
+#searchInput3 {
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc; /* Viền của ô tìm kiếm */
+    border-radius:10px;
+}
+#searchInput4{
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #ccc; /* Viền của ô tìm kiếm */
+    border-radius:10px;
+}
+.phonenumber .hoten{
+    margin-left: 450px;
+    float: inline-start;
+    margin-top: -400px;
+}
+.phonenumber .hoten a{
+    margin-top: 30px;
+    width:  300px;
+    height: fit-content;
+    padding: 10px;
+    background-color: #3968eb;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+.phonenumber .hoten a:hover{
+    transition:  0.3s;
+    background-color: rgb(131, 44, 185);
+    color: black;
+}
+.phonenumber .hoten .info1 p{
+    margin-top: -15px;
+}
+.phonenumber .hoten .info1 .fbGG a{
+    width: 120px;
+    display: flex;
+    background-color: white;
+    border: 1px solid black;
+}
+.fbGG {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -70px; /* Thêm khoảng cách giữa các nút */
+    
+}
+
+.facebook-btn,
+.google-btn {
+    padding: 10px 20px;
+    background-color: aliceblue; /* Màu của Facebook */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.google-btn {
+    background-color: aliceblue; /* Màu của Google */
+}
+
+.facebook-btn:hover,
+.google-btn:hover {
+    background-color: black; /* Màu khi di chuột qua cho Facebook */
+    color: black;
+}
+.facebook-btn img, .google-btn img {
+    margin-right: 5px; /* Khoảng cách giữa logo và chữ */
+}
+.dangnhapngay{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+.info1 p{
+    padding-bottom: 25px;
+}
+.dangnhapngay h5{
+    
+    margin-left: 10px;
+    width: 140px;
+    height: fit-content;
+    background-color: white;
+    padding: 15px;
+    margin-left:10px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.dangnhapngay h5:hover{
+    background-color: #3968eb ;
+    transition: 0.3s;
+}
+.hoten .tick{
+    margin-top: 15px;
+}

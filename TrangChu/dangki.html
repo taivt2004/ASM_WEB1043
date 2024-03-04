@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Kí</title>
+    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet" href="footerSanPham.css">
+    <link rel="stylesheet" href="dangki.css">
+   <script src="DangKi.js"></script>
+</head>
+<body>
+    <header>
+        <p class="promo-text">ƯU ĐÃI HOT <span class="promo-text-highlight">MỖI NGÀY</span></p>
+        <img src="saleofff.png" alt="">
+        <img src="ship.png" alt="">
+        <img src="coupon.png" alt="">
+        <p class="promo-text"><span class="promo-text-highlight2">DEAL XỊN</span> CHO BẠN LẦN ĐẦU SỬ DỤNG</p>
+    </header>
+
+    <nav class="nav-header">
+        <a href="trangchu.html">TRANG CHỦ</a>
+        <a href="SanPham.html">SẢN PHẨM</a>
+        <a href="SanPham.html">GIỎ HÀNG</a>
+        <a href="dangnhap.html">ĐĂNG NHẬP</a>
+        <a href="dangki.html">ĐĂNG KÍ</a>
+    </nav>
+
+    <main >
+        <div class="phonenumber">
+            <form onsubmit="dangki()">
+            <p>Số điện thoại*</p>
+            <input type="text" id="searchInput1" placeholder="Nhập số điện thoại của bạn">
+            <div id="toastname" style="color: red;  width: 300px;font-size: 15px;"></div>
+            <p>Mật khẩu*</p>
+            <div id="toastpass" style="color: red;  width: 300px;font-size: 15px;"></div>
+            <input type="text" id="searchInput2" placeholder="Tối thiểu 6 kí tự bao gồm chữ và số">
+            <p>Nhập email*</p>
+            <div id="toastemail" style="color: red;  width: 300px;font-size: 15px;"></div>
+            <input type="text" id="searchInput3" placeholder="Nhập email">
+            <div class="dangnhapngay">
+            <p>Bạn đã có tài khoản? <br> Đăng nhập ngay!</p>
+                <a href="dangnhap.html" style="
+                width: 10px; text-decoration: none; color: black;"> <h5>Đăng nhập</h5></a>
+            <div class="info">
+            </div>
+            
+                <br>
+            
+            </div>
+
+            <div class="hoten">
+                <p>Họ tên*</p>
+                <div id="toasthoten" style="color: red;  width: 300px;font-size: 15px;"></div>
+                <input type="text" id="searchInput4" placeholder="Nhập họ tên của bạn">
+                <div class="tick">
+                <label>
+                    <input type="checkbox" name="item2" value="Item 2">
+                    Tôi muốn nhận thông tin ưu đãi qua SMS
+                </label>
+            
+                <button id="btnDangKi">Đăng ký</button>
+            </div>
+        </form>
+            <div class="info1">
+                
+                
+                <h5> <input type="checkbox" name="item2" value="Item 2">Tôi đã đọc và đồng ý với Điều Khoản Sử Dụng và Chính Sách Bảo Mật của Lazada của Lazada, bao gồm quyền thu thập, sử dụng, và tiết lộ dữ liệu cá nhân của tôi theo pháp luật quy định.</h4>
+                <br>
+                <p >Hoặc đăng kí với</p>
+            
+            <div class="fbGG">
+                <a href="#" class="facebook-btn"> <img src="facebook.png" width="25px" alt="">Facebook</a>
+                <a href="#" class="google-btn"> <img src="gg.png" width="25px" alt="" > Google</a>
+            </div>
+            
+            
+            </div>
+            </div>
+            
+        </div>
+
+
+        
+
+        
+        
+    </main>
+
+    <div class="footer">
+        <div class="imgfooter">
+            <img src="anhfooter1.webp" alt="">
+            <img src="anhfooter2.webp" alt="">
+            <img src="anhfooter3.webp" alt="">
+        </div>
+        <div class="lzd-footer-inner" data-spm="footer_top">
+  <div class="lzd-footer-width-25">
+    <h3 class="footer-title">LIÊN HỆ VỚI LAZADA</h3>
+    <ul class="footer-list">
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Hotline &amp; Chat trực tuyến (24/7)</a></li>
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Trung tâm hỗ trợ</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/payments/">Hướng dẫn đặt hàng</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/shipping-and-delivery/">Giao hàng &amp; Nhận hàng</a></li>
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/products-on-lazada/">Chính sách hàng nhập khẩu</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/returns/?spm=a2o4n.helpcenter.0.0.8e226171cswmxE">Hướng dẫn đổi trả hàng</a></li>
+    
+    
+    </ul>
+  </div>
+  <div class="lzd-footer-width-25">
+    <h3 class="footer-title">LAZADA VIỆT NAM</h3>
+    <ul class="footer-list">
+    
+      <li class="footer-li">
+        
+          <a href="//www.lazada.vn/directory/categories">Tất cả danh mục</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="//group.lazada.com/en/about/">Về Lazada Việt Nam</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/sell-on-lazada/register_now/">Bán hàng cùng Lazada</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://www.lazada.vn/affiliate/">Chương trình Lazada Afﬁliate</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="//www.lazada.com/work-at-lazada/">Tuyển dụng</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/terms-of-use">Điều khoản sử dụng</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/privacy">Chính sách bảo mật</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://www.lazada.vn/press/">Báo chí</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/IPR">Bảo vệ quyền sở hữu trí tuệ</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/quy-che-ban-hang">Quy chế hoạt động sàn Lazada</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;wh_pid=/lazada/channel/vn/khuyen-mai/quy-trinh-giai-quyet-tranh-chap-khieu-nai">Quy trình giải quyết tranh chấp, khiếu nại</a>
+        
+      </li>
+    
+    </ul>
+  </div>
+  <div class="lzd-footer-width-50">
+    
+      
+      <div class="lzdfooterappdownloads">
+        <div class="pull-left">
+          <div class="title">Go where your heart beats</div>
+          <div class="text">Tải App Lazada</div>
+          <div class="ggappstore">
+            <img src="appstore+ggplay.png" alt="">
+          </div>
+        </div>
+      </div>
+      
+        <div class="lzd-footer-app-supplement">
+          
+            <div>CÔNG TY TNHH RECESS</div>
+          
+            <div>Giấy CNĐKDN: 0308808576 – Ngày cấp: 06/5/2009, được sửa đổi lần thứ 19 ngày 15/8/2019. </div>
+          
+            <div>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.HCM </div>
+          
+            <div>Địa chỉ đăng ký kinh doanh: Tầng 19, Tòa nhà Saigon Centre – Tháp 2, 67 Lê Lợi, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam.</div>
+          
+        </div>
+      
+    
+  </div>
+</div>
+    </div>
+</body>
+</html>

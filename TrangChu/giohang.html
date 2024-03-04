@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+
+    <link rel="stylesheet" href="trangchu.css">
+    <link rel="stylesheet" href="footerSanPham.css">
+    <link rel="stylesheet" href="giohang.css">
+    <script src="giohang2.js"></script>
+</head>
+
+<body>
+    <header>
+        <p class="promo-text">ƯU ĐÃI HOT <span class="promo-text-highlight">MỖI NGÀY</span></p>
+        <img src="saleofff.png" alt="">
+        <img src="ship.png" alt="">
+        <img src="coupon.png" alt="">
+        <p class="promo-text"><span class="promo-text-highlight2">DEAL XỊN</span> CHO BẠN LẦN ĐẦU SỬ DỤNG</p>
+    </header>
+
+    <nav class="nav-header">
+        <a href="trangchu.html">TRANG CHỦ</a>
+        <a href="SanPham.html">SẢN PHẨM</a>
+        <a href="giohang.html">GIỎ HÀNG</a>
+        <a href="dangnhap.html">ĐĂNG NHẬP</a>
+        <a href="dangki.html">ĐĂNG KÍ</a>
+    </nav>
+
+    <main>
+        <style>
+           /* CSS cho bảng giỏ hàng */
+           body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    
+}
+
+h1 {
+    color: #333;
+}
+
+#cartItems {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.product-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.product-item img {
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+.product-item p {
+    margin: 0;
+}
+.remove-button{
+    background-color: azure;
+    border-radius: 20px;
+    width: 50px;
+    height: 25px;
+}
+.thanhtoan{
+    background-color: rgb(35, 38, 38);
+    border-radius: 20px;
+    height: 25px;
+    color: #fff;
+}
+.thanhtoan:hover{
+    cursor: pointer;
+    background-color: #c4bfbf;
+   
+}
+.remove-button:hover{
+    cursor: pointer;
+    background-color: #c4bfbf;
+}
+#checkoutButton{
+    margin-left: 420px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(35, 38, 38);
+    border-radius: 30px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+#checkoutButton:hover{
+    cursor: pointer;
+    background-color: #c4bfbf;
+}
+/* ... Thêm các quy tắc CSS khác tùy vào thiết kế của bạn ... */
+
+
+        </style>
+    </head>
+    <body>
+    
+      
+        
+
+        <div id="cartItems">
+            
+        </div>
+        <div id="totalPrice"></div>
+        
+<!-- Thêm phần tử HTML để hiển thị tổng tiền -->
+<div id="totalPrice"></div>
+<button id="checkoutButton">THANH TOÁN NGAY</button>
+
+
+<script>
+    // Lấy danh sách sản phẩm từ Local Storage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Hiển thị danh sách sản phẩm và tổng tiền trong giỏ hàng
+    const cartContainer = document.getElementById('cartItems');
+    const totalPriceContainer = document.getElementById('totalPrice');
+
+    function renderCart() {
+        cartContainer.innerHTML = ""; // Xóa nội dung giỏ hàng trước khi render lại
+
+        if (cartItems.length > 0) {
+            let totalAmount = 0; // Biến để tính tổng tiền
+
+            cartItems.forEach((item, index) => {
+                const productDiv = document.createElement('div');
+                productDiv.innerHTML = `
+                    <p><strong>${item.name}</strong></p>
+                    <img src="imgSanPham/iphone12p1.webp" alt="${item.name}" style="max-width: 100px;">
+                    <p>Giá: ${formatCurrency(item.price)} </p>
+                    <p>Màu sắc: <span style="background-color:${item.color}; display:inline-block; width:20px; height:20px; border:1px solid black; border-radius:50px; margin-top: -40px"></span></p>
+                    <p>Dung lượng: ${item.dungluong}</p>
+                    <p>Số lượng: ${item.soluong}</p>
+                    <button class="remove-button" data-index="${index}">🗑</button>
+                    <button class="thanhtoan" data-index="${index}">Thanh toán ngay</button>
+                    <hr>
+                `;
+                cartContainer.appendChild(productDiv);
+
+                // Tính tổng tiền của từng sản phẩm và cộng vào biến totalAmount
+                totalAmount += parseInt(item.price) * parseInt(item.soluong);
+            });
+
+            // Hiển thị tổng tiền
+            totalPriceContainer.innerHTML = `<p><strong style="margin-left: 420px;">Tổng tiền: ${formatCurrency(totalAmount)} </strong> </p>`;
+
+
+            // Gắn sự kiện click cho nút xóa
+            const removeButtons = document.querySelectorAll('.remove-button');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    cartItems.splice(index, 1);
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    renderCart(); // Render lại giỏ hàng sau khi xóa
+                });
+            });
+        } else {
+            cartContainer.innerHTML = "<p>Giỏ hàng của bạn trống.</p>";
+            totalPriceContainer.innerHTML = ""; // Nếu giỏ hàng trống, ẩn tổng tiền
+        }
+    }
+    
+    // Gọi hàm renderCart khi trang web được tải
+    renderCart();
+
+    function formatCurrency(price) {
+        // Hàm định dạng giá tiền theo định dạng số
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+    }
+</script>
+
+        
+
+        
+    </main>
+
+    
+    <div class="footer">
+        <div class="imgfooter">
+            <img src="anhfooter1.webp" alt="">
+            <img src="anhfooter2.webp" alt="">
+            <img src="anhfooter3.webp" alt="">
+        </div>
+        <div class="lzd-footer-inner" data-spm="footer_top">
+  <div class="lzd-footer-width-25">
+    <h3 class="footer-title">LIÊN HỆ VỚI LAZADA</h3>
+    <ul class="footer-list">
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Hotline &amp; Chat trực tuyến (24/7)</a></li>
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/">Trung tâm hỗ trợ</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/payments/">Hướng dẫn đặt hàng</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/shipping-and-delivery/">Giao hàng &amp; Nhận hàng</a></li>
+    
+      <li class="footer-li"><a href="https://www.lazada.vn/helpcenter/products-on-lazada/">Chính sách hàng nhập khẩu</a></li>
+    
+      <li class="footer-li"><a href="//www.lazada.vn/helpcenter/returns/?spm=a2o4n.helpcenter.0.0.8e226171cswmxE">Hướng dẫn đổi trả hàng</a></li>
+    
+    
+    </ul>
+  </div>
+  <div class="lzd-footer-width-25">
+    <h3 class="footer-title">LAZADA VIỆT NAM</h3>
+    <ul class="footer-list">
+    
+      <li class="footer-li">
+        
+          <a href="//www.lazada.vn/directory/categories">Tất cả danh mục</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="//group.lazada.com/en/about/">Về Lazada Việt Nam</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/sell-on-lazada/register_now/">Bán hàng cùng Lazada</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://www.lazada.vn/affiliate/">Chương trình Lazada Afﬁliate</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="//www.lazada.com/work-at-lazada/">Tuyển dụng</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/terms-of-use">Điều khoản sử dụng</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;at_iframe=1&amp;wh_pid=/lazada/channel/vn/legal/privacy">Chính sách bảo mật</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://www.lazada.vn/press/">Báo chí</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/IPR">Bảo vệ quyền sở hữu trí tuệ</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/i/vn/LandingPage/quy-che-ban-hang">Quy chế hoạt động sàn Lazada</a>
+        
+      </li>
+    
+      <li class="footer-li">
+        
+          <a href="https://pages.lazada.vn/wow/gcp/route/lazada/vn/upr_1000345_lazada/channel/vn/upr-router/vn?hybrid=1&amp;data_prefetch=true&amp;prefetch_replace=1&amp;wh_pid=/lazada/channel/vn/khuyen-mai/quy-trinh-giai-quyet-tranh-chap-khieu-nai">Quy trình giải quyết tranh chấp, khiếu nại</a>
+        
+      </li>
+    
+    </ul>
+  </div>
+  <div class="lzd-footer-width-50">
+    
+      
+      <div class="lzdfooterappdownloads">
+        <div class="pull-left">
+          <div class="title">Go where your heart beats</div>
+          <div class="text">Tải App Lazada</div>
+          <div class="ggappstore">
+            <img src="appstore+ggplay.png" alt="">
+          </div>
+        </div>
+      </div>
+      
+        <div class="lzd-footer-app-supplement">
+          
+            <div>CÔNG TY TNHH RECESS</div>
+          
+            <div>Giấy CNĐKDN: 0308808576 – Ngày cấp: 06/5/2009, được sửa đổi lần thứ 19 ngày 15/8/2019. </div>
+          
+            <div>Cơ quan cấp: Phòng Đăng ký kinh doanh – Sở kế hoạch và Đầu tư TP.HCM </div>
+          
+            <div>Địa chỉ đăng ký kinh doanh: Tầng 19, Tòa nhà Saigon Centre – Tháp 2, 67 Lê Lợi, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam.</div>
+          
+        </div>
+      
+    
+  </div>
+</div>
+    </div>
+   
+    
+</body>
+</html>

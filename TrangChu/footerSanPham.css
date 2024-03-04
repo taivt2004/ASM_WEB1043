@@ -1,0 +1,83 @@
+/* Style for the footer container */
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-size: 12px;
+    margin-top: 10px;
+  
+  }
+  .footer .imgfooter{
+    margin-left: 250px;
+  }
+  .footer .imgfooter img{
+        width: 25%;
+        padding: 10px;
+  }
+  /* Style for the footer title */
+  .footer-title {
+    color: #333;
+  }
+  .lzd-footer-inner{
+    display: flex;
+    margin-left: 40px;
+  }
+  .lzd-footer-width-25{
+    padding: 20px;
+  }
+  .lzd-footer-width-50{
+    padding: 20px;
+    margin-top: 23px;
+  }
+  /* Style for the footer list */
+  .footer-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for footer links */
+  .footer-li a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-li a:hover {
+    color: #e44d26; /* Change the color on hover to an accent color */
+  }
+  
+  /* Additional styles for app downloads section */
+  .lzd-footer-app-downloads {
+    margin-top: 20px;
+  }
+  
+  .title {
+    font-weight: bold;
+    color: #333333;
+    width: fit-content;
+  }
+  
+  .text {
+    width: fit-content;
+    color: #666;
+  }
+  
+  /* Styles for the company information section */
+  .lzd-footer-app-supplement {
+    margin-top: 20px;
+    color: #888;
+  }
+  
+  /* Clearfix to handle floats */
+  .clear::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .lzdfooterappdownloads .pull-left{
+    max-width: 700px;
+    display: flex;
+  }
+  .lzdfooterappdownloads .pull-left .ggappstore img{
+    width: 25%;
+  }
+  
